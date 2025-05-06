@@ -9,3 +9,8 @@ my personal site/portfolio
 `categories`
 `tags`
 `permalink`
+
+
+## todo
+
+- project summaries: problem, your approach, technologies used, and the results
