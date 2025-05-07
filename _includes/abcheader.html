@@ -1,4 +1,12 @@
-<div class="header-content" style="padding: 0.5rem 0;">
-    <img src="{{site.logo | relative_url}}" alt="Logo" class="profile-image" />
-    <h2 style="margin: 0; font-size: 1.6rem; font-weight: 550;"><a href="{{ "/" | absolute_url }}">Eric Werner</a></h2>
+<div class="header-content" style="display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 0 0.5rem 0;">
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <img src="/assets/images/profile_pic.jpg" alt="Eric Werner" class="profile-image" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 0.3rem;" />
+    <h1 style="margin: 0; font-size: 1.3rem; font-weight: 700; text-align: center;">Eric Werner</h1>
+  </div>
+  <div>
+    <label class="theme-switch" for="theme-toggle" style="cursor:pointer;">
+      <input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode" />
+      <span class="slider"></span>
+    </label>
+  </div>
 </div>

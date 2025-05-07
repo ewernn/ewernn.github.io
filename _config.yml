@@ -2,22 +2,17 @@
 # Jekyll settings
 # -----------------------------------------------------------------------------
 
-#theme: jekyll-theme-minimal # minimal
-#remote_theme: pages-themes/architect@v0.2.0
-remote_theme: pages-themes/minimal@v0.2.0 # minimal
-
 title: "Eric Werner's Website"
 author:
   name: "Eric Werner"
-  email: "eawern@outlook.com"
-  twitter: "eriwern"
+  email: "ericw.stanford@google.com"
+  twitter: "ewernn"
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme
 
 description: >- # this means to ignore newlines until "baseurl:"
-  '“Contentment is as rare among men as it is natural among animals.
-    No form of government has ever satisfied its subjects”'
+  '"Contentment is as rare among men as it is natural among animals.
+    No form of government has ever satisfied its subjects"'
   -Caesar and the Christ, Will Durant
 #twitter_username: eriwern
 github_username:  ewernn
