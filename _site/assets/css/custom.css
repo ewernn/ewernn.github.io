@@ -66,5 +66,3 @@ nav li { margin-bottom: 0.5rem; }
   nav { width: 100%; }
   .profile-section { flex-direction: column; text-align: center; } }
 b, strong { color: var(--text-color) !important; }
-
-@media screen and (min-width: 961px) { .wrapper { margin-left: 270px !important; /* This matches the fixed header width */ } }

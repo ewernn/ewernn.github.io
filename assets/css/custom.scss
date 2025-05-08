@@ -230,8 +230,8 @@ b, strong {
   color: var(--text-color) !important;
 }
 
-@media screen and (min-width: 961px) {
-  .wrapper {
-    margin-left: 270px !important; /* This matches the fixed header width */
-  }
-}
+// @media screen and (min-width: 961px) {
+//   .wrapper {
+//     margin-left: 270px !important; /* This matches the fixed header width */
+//   }
+// }
