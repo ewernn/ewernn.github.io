@@ -5,25 +5,44 @@ title: "cs224u project"
 ---
 # Project Overview: Prompt Tuning for Language Models
 
+> Trained and interpreted soft prompts for language understanding tasks using prompt-tuning, a PEFT (Parameter Efficient Finetuning) method. Improves prompting by revising prompt at an embedding level rather than the English level. Found soft prompt diverges more on harder-to-describe tasks, implying English task description is suboptimal, and prompting on an embedding-level can provide greater accuracy (approaching finetuning accuracy).
+
 ## Background
-Prompt tuning allows language models to learn new tasks and capabilities without full fine-tuning, enabling more efficient and customizable training. This project explored prompt tuning through training and interpreting soft prompts on language understanding tasks.
+Prompt tuning allows language models to learn new tasks and capabilities without full fine-tuning, enabling more efficient and customizable training. This project explored prompt tuning through training and interpreting soft prompts on language understanding tasks. It can beat finetuning by letting gradient descent find an optimal prompt, communicating with the model on an embedding level that English cannot.
 
 ## Methods
-- Used the Bloomz 560M model and optimized soft prompts on examples for tasks like natural language inference.
-- Analyzed the semantic meaning of soft prompts by finding nearest neighbor tokens.
-- Evaluated stochasticity via multiple train runs and visualizing variance.
-- Assessed zero-shot transferability by testing prompts on new datasets.
+- Used the **Bloomz 560M** model and optimized soft prompts on examples for tasks like natural language inference.
+- **Semantic Interpretability**: Analyzed soft prompts (size `(n, 1024)` for `n` trainable tokens) by finding nearest neighbor tokens using cosine distance.
+  - Examined top-3 similar tokens for each soft prompt token
+  - Found key words that didn't change during training (important to results)
+  - Discovered tokens sometimes represented in other languages like Chinese
+  - Noticed the model likes to be explicitly told to be accurate
+- **Stochasticity Assessment**: Trained each task 4 times for 50 epochs (with `Adam` optimizer)
+  - Projected all 16 `(n,1024)` soft prompts into 2D using t-SNE
+  - Found more complicated tasks deviate more from original prompt
+  - All 4 train runs for each task resulted in equidistant t-SNE distances
+- **Zero-shot Transferability**: Tested prompts on new datasets
+  - Subtracted prompt embeddings (B-A) to find similarity between tasks (Frobenius norm)
+  - Measured accuracy of prompts across different tasks (e.g., RTE's soft prompt on WSC's validation set)
+  - Found correlation between soft-prompt-similarity and task-transferability
 
 ## Key Findings
 - Soft prompts diverge more on complex tasks, suggesting prompts can improve on English descriptions.
-- Semantic interpretability remains limited, though some key tokens persist.
+- Semantic interpretability remains limited, though some key tokens persist:
+  - In 3 of 4 tasks, token for "accurate" appeared in soft prompt
+  - Word "entailed" persisted through training (important tokens don't change)
 - Significant stochasticity exists, with multiple distinct prompts achieving similar accuracy.
-- Prompts encode more than just the task and allow some transferability.
+- Prompts encode more than just the task and allow some transferability:
+  - Most soft prompt transfers (90%) improved accuracy versus no prompt
+  - More similar prompts showed better transferability
+  - Prompts seem to encode general instructions like "be accurate"
 
 ## Takeaways
 - Prompt tuning surpasses finetuning and provides embedding-level communication.
-- Inner workings of prompts enable better design choices.
+- Understanding the inner workings of prompts enables better design choices.
 - There are opportunities to improve prompt interpretability.
 - Prompts exhibit meaningful variance uncaptured by accuracy.
+- There exist many/infinite soft prompts that achieve the same accuracy (stochasticity).
+- Transferability suggests soft prompts encode more than just task-specific information.
 
-This provides an overview of the project's goals, techniques, results, and conclusions, highlighting the advantages of prompt tuning and areas for further research. The focus is on communicating the essence and impact to potential employers. Details can be expanded on in an interview.
+This project demonstrates how prompt tuning provides a powerful alternative to both manual prompting and full fine-tuning, operating at the embedding level to achieve superior results while remaining parameter-efficient.
