@@ -2,7 +2,12 @@
 layout: default # page
 title: "cs224r project"
 # permalink: /URL-PATH
+mathjax: true
 ---
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
 # Efficiency-Boosted Robotic Reinforcement Learning via VC-1 Visual Encoding
 
 > Forked Microsoft's VRL3 reinforcement learning framework to improve sample efficiency.
@@ -10,6 +15,11 @@ title: "cs224r project"
 > Replaced basic image encoder with VC-1, a foundation model trained specifically for Embodied AI for 5x increased sample efficiency.
 > 
 > Added RLPD (Reinforcement Learning from Prior Data) to improve robustness during exploration and increase online finetuning sample efficiency by 1.5x
+
+<div style="text-align: center;">
+  <img src="/assets/images/224r_VC1.jpg" alt="VC-1 Performance Comparison" width="75%" height="75%">
+  <p><em>VC-1 (teal) improving sample efficiency by 5x</em></p>
+</div>
 
 ## Objective:
 Enhance sample efficiency in D4RL's Franka kitchen's sequential robotic arm tasks (4 consecutive tasks) using a modified VRL3 reinforcement learning framework.
@@ -31,7 +41,7 @@ Enhance sample efficiency in D4RL's Franka kitchen's sequential robotic arm task
 
 ## Challenges Addressed:
 - Visual learning complexity (visual input, sparse reward, high-dimensional action space)
-- Key hyperparameters: $\alpha$ (policy, Q-networks), exploration action noise, and $\alpha_{encoder} \sim \frac{\alpha}{10}$
+- Key hyperparameters: $$\alpha$$ (policy, Q-networks), exploration action noise, and $$\alpha_{encoder} \sim \frac{\alpha}{10}$$
 - Stage transitions:
   - 1 → 2: CCE (conv. channel expansion) to allow first encoder to take in multiple frames
   - 2 → 3: Safe Q: set max-Q value to smoothly transition
