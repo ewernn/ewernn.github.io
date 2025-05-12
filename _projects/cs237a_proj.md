@@ -10,6 +10,11 @@ title: "cs237a project"
 ## Overview
 Developed a wheeled robot capable of autonomously navigating a simulated environment decorated with images of animals on walls and stop signs. The robot accurately mapped the area, obeyed traffic signs, and visited designated locations before returning to its starting position.
 
+<div style="text-align: center;">
+  <img src="/assets/images/rviz_237a.jpg" alt="RViz Visualization" width="75%" height="75%">
+  <p><em>RViz Visualization of Robot Environment and Trajectory</em></p>
+</div>
+
 ## Completed Mission
 
 1. Explored 3D environment and generated map within 30 seconds.

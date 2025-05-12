@@ -10,7 +10,7 @@ a:hover { text-decoration: underline; }
 
 h1, h2, h3, h4, h5, h6, p { color: var(--text-color); }
 
-.wrapper { max-width: 470px !important; width: 100% !important; margin: 0 auto !important; padding: 0 20px !important; display: block !important; }
+.wrapper { max-width: 530px !important; width: 100% !important; margin: 0 auto !important; padding: 0 20px !important; display: block !important; }
 
 header { top: 0; width: 100%; background-color: var(--header-bg); z-index: 1000; padding: 0; border-bottom: 1px solid var(--header-border); margin: 0; }
 
