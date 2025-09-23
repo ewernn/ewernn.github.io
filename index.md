@@ -23,6 +23,10 @@ title: Home
 <h2 style="text-align: center;">Recent Work</h2>
 <div style="max-width: 550px; margin: 1.5rem auto 0 auto;">
   <div style="margin-bottom: 1rem;">
+    <strong><a href="https://www.pythea.io/">Pythea</a></strong>
+    <div style="margin-left: 1rem;">90-day career transformation platform with AI-powered insights and daily tasks</div>
+  </div>
+  <div style="margin-bottom: 1rem;">
     <strong><a href="/projects/whyai">WhyAI</a></strong>
     <div style="margin-left: 1rem;">Production-ready conversational AI system w/ privacy-first architecture (iOS)</div>
   </div>
